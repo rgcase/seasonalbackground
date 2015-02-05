@@ -5,8 +5,7 @@ import datetime
 import re
 
 RESOLUTION_RATIO = float(1680) / float(1050)
-NAME = 'ryan'
-
+PATH_TO_FOLDER = '/Users/ryan/Pictures/'
 
 def findseason(day):
     if 3 <= day.month <= 5:
@@ -71,7 +70,7 @@ def dl_photos(photos):
         fname = photo[1].url.split('/')[-1]
         if not fname:
             continue
-        file = open('/Users/' + NAME + '/Pictures/' + str(fname), 'a')
+        file = open(PATH_TO_FOLDER + str(fname), 'a')
         r = requests.get(photo[1].url)
         file.write(r.content)
         file.close()
